@@ -1,0 +1,9 @@
+mysql:
+  MysqlHost: 0.0.0.0
+  MysqlPort: 3306
+  MysqlUser: root
+  MysqlPassword: admin
+  MysqlDbname: fintech
+  MysqlSslmode: false
+  MysqlDriver: mysql
+

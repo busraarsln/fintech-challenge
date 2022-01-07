@@ -1,0 +1,3 @@
+//to run mysql with project credentials
+docker run --name my-db -p 3306:3306 -e MYSQL_ROOT_PASSWORD=admin -e MYSQL_DATABASE=fintech -d mysql
+

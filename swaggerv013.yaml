@@ -1,0 +1,762 @@
+basePath: /
+definitions:
+  CommonError:
+    properties:
+      message:
+        description: |-
+          Message of the error
+          in: string
+        type: string
+        x-go-name: Message
+      status:
+        description: |-
+          Status of the error
+          in: int64
+        format: int64
+        type: integer
+        x-go-name: Status
+    type: object
+    x-go-package: goswagger/controllers
+  CommonSuccess:
+    properties:
+      message:
+        description: |-
+          Message of the error
+          in: string
+        type: string
+        x-go-name: Message
+      status:
+        description: |-
+          Status of the error
+          in: int64
+        format: int64
+        type: integer
+        x-go-name: Status
+    type: object
+    x-go-package: goswagger/controllers
+  Accounts:
+    items:
+      $ref: '#/definitions/Account'
+    type: array
+    x-go-package: goswagger/models
+  Account:
+    properties:
+      id:
+        description: |-
+          Id of the account
+          in: int
+        format: int
+        type: integer
+        x-go-name: Id
+      type:
+        description: |-
+          Type of the account
+          in: string
+        type: string
+        x-go-name: Type
+      status:
+        description: |-
+          Status of the account
+          in: string
+        type: string
+        x-go-name: Status
+      account_no:
+        description: |-
+          AccountNo of the account
+          in: string
+        type: string
+        x-go-name: AccountNo
+      iban:
+        description: |-
+          Iban of the account
+          in: string
+        type: string
+        x-go-name: Iban
+      currency:
+        description: |-
+          Currency of the account
+          in: string
+        type: string
+        x-go-name: Currency
+      description:
+        description: |-
+          Description of the account
+          in: string
+        type: string
+        x-go-name: Description
+      nickname:
+        description: |-
+          Nickname of the account
+          in: string
+        type: string
+        x-go-name: Nickname
+      customer_id:
+        description: |-
+          CustomerId of the account
+          in: int
+        format: int 
+        type: integer
+        x-go-name: CustomerId
+      balance_id:
+        description: |-
+          BalanceId of the account
+          in: int
+        format: int
+        type: integer
+        x-go-name: BalanceId
+      created_at:
+        description: |-
+          CreatedAt of the account
+          in: string
+        type: string
+        x-go-name: CreatedAt
+      updated_at:
+        description: |-
+          UpdatedAt of the account
+          in: string
+        type: string
+        x-go-name: UpdatedAt
+      is_active:
+        description: |-
+          IsActive of the account
+          in: string
+        type: boolean
+        x-go-name: IsActive
+    type: object
+    x-go-package: goswagger/models
+  Amount:
+    properties:
+      currency:
+        description: |-
+          Currency of the Amount
+          in: string
+        type: string
+        x-go-name: AmountCurrency
+      value:
+        description: |-
+          Value of the Amount
+          in: float64
+        type: number
+        x-go-name: Value
+    type: object
+    x-go-package: goswagger/models
+  GetAccounts:
+    properties:
+      total_count:
+        description: |-
+         TotalCount of the response
+         in: string
+        type: integer
+        format: integer
+        x-go-name: TotalCount
+      total_pages:
+        description: |-
+         TotalPages of the response
+         in: string
+        type: integer
+        format: integer
+        x-go-name: TotalPages
+      page:
+        description: |-
+         Page of the response
+         in: string
+        type: integer
+        format: integer
+        x-go-name: Page
+      size:
+        description: |-
+         Size of the response
+         in: string
+        type: integer
+        format: integer
+        x-go-name: Size
+      accounts:
+        $ref: '#/definitions/Accounts'
+    type: object
+    x-go-package: goswagger/controllers
+  GetAccount:
+    properties:
+      data:
+        $ref: '#/definitions/Account'
+    type: object
+    x-go-package: goswagger/controllers
+  Customer:
+    properties:
+      id:
+        description: |-
+          Id of the customer
+          in: int
+        format: int
+        type: integer
+        x-go-name: Id
+      name:
+        description: |-
+          Name of the customer
+          in: string
+        type: string
+        x-go-name: Name
+      surname:
+        description: |-
+          Surname of the customer
+          in: string
+        type: string
+        x-go-name: Surname
+      phone_number:
+        description: |-
+          PhoneNumber of the customer
+          in: string
+        type: string
+        x-go-name: PhoneNumber
+      email:
+        description: |-
+          Email of the customer
+          in: string
+        type: string
+        x-go-name: Email
+      role:
+        description: |-
+          Role of the customer
+          in: string
+        type: string
+        x-go-name: Role
+      is_active:
+        description: |-
+          IsActive of the customer
+          in: boolean
+        type: boolean
+        x-go-name: IsActive
+      password:
+        description: |-
+          Nickname of the customer
+          in: string
+        type: string
+        x-go-name: Password
+      created_at:
+        description: |-
+          CreatedAt of the customer
+          in: string
+        type: string
+        x-go-name: CreatedAt
+      updated_at:
+        description: |-
+          UpdatedAt of the customer
+          in: string
+        type: string
+        x-go-name: UpdatedAt
+    type: object
+    x-go-package: goswagger/models
+  ReqAddCustomer:
+    properties:
+      name:
+        description: |-
+          Name of the customer
+          in: string
+        type: string
+        x-go-name: Name
+      surname:
+        description: |-
+          Surname of the customer
+          in: string
+        type: string
+        x-go-name: Surname
+      phone_number:
+        description: |-
+          PhoneNumber of the customer
+          in: string
+        type: string
+        x-go-name: PhoneNumber
+      email:
+        description: |-
+          Email of the customer
+          in: string
+        type: string
+        x-go-name: Email
+      role:
+        description: |-
+          Role of the customer
+          in: string
+        type: string
+        x-go-name: Role
+      is_active:
+        description: |-
+          IsActive of the customer
+          in: string
+        type: boolean
+        x-go-name: IsActive
+      password:
+        description: |-
+          Nickname of the customer
+          in: string
+        type: string
+        x-go-name: Password
+    type: object
+    x-go-package: goswagger/models
+  ReqAddAccount:
+    properties:
+      type:
+        description: |-
+          Type of the account
+          in: string
+        type: string
+        x-go-name: Type
+      status:
+        description: |-
+          Status of the account
+          in: string
+        type: string
+        x-go-name: Status
+      currency:
+        description: |-
+          Currency of the account
+          in: string
+        type: string
+        x-go-name: Currency
+      description:
+        description: |-
+          Description of the account
+          in: string
+        type: string
+        x-go-name: Description
+      nickname:
+        description: |-
+          Nickname of the account
+          in: string
+        type: string
+        x-go-name: Nickname
+      is_active:
+        description: |-
+          IsActive of the account
+          in: string
+        type: boolean
+        x-go-name: IsActive
+    type: object
+    x-go-package: goswagger/models
+  ReqAddTransaction:
+    properties:
+      info:
+        description: |-
+          Info of the transaction
+          in: string
+        type: string
+        x-go-name: Info
+      from:
+        description: |-
+          From of the transaction
+          in: string
+        type: string
+        x-go-name: From
+      to:
+        description: |-
+          To of the transaction
+          in: string
+        type: string
+        x-go-name: To
+      amount:
+        $ref: '#/definitions/Amount'
+    type: object
+    x-go-package: goswagger/models
+  ReqUpdateBalance:
+    properties:
+      amount:
+        $ref: '#/definitions/Amount'
+    type: object
+    x-go-package: goswagger/models
+  ReqAddPayment:
+    properties:
+      booked:
+        description: |-
+          booked of the payment
+          in: string
+        type: string
+        x-go-name: Booked
+        from:
+          description: |-
+            From of the payment
+            in: string
+          type: string
+          x-go-name: PaymentFrom
+        to:
+          description: |-
+            To of the payment
+            in: string
+        type: string
+        x-go-name: PaymentTo
+      amount:
+        $ref: '#/definitions/Amount'
+    type: object
+    x-go-package: goswagger/models
+host: localhost:8000
+info:
+  title: 'Fintech Api:'
+  version: 0.0.1
+paths:
+  /customers:
+    get:
+      description: Get customers list
+      operationId: listCustomer
+      responses:
+        "200":
+          description: GetAccounts
+          schema:
+            $ref: '#/definitions/GetAccounts'
+        "500":
+          description: CommonError
+          schema:
+            $ref: '#/definitions/CommonError'
+      security:
+      - apiKey:
+        - '[]'
+      tags:
+      - Customer
+    post:
+      description: Create a new customer
+      operationId: addCustomer
+      parameters:
+      - description: 'name: body'
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/ReqAddCustomer'
+        x-go-name: Body
+      responses:
+        "200":
+          description: GetCustomer
+          schema:
+            $ref: '#/definitions/CommonSuccess'
+        "500":
+          description: CommonError
+          schema:
+            $ref: '#/definitions/CommonError'
+      security:
+      - apiKey:
+        - '[]'
+      tags:
+      - Customer
+  /customers/{id}:
+    delete:
+      description: Delete customer
+      operationId: deleteCustomer
+      parameters:
+      - description: 'name: id'
+        in: path
+        name: id
+        required: true
+        type: integer
+        x-go-name: Id
+      responses:
+        "200":
+          description: DeleteCustomer
+          schema:
+            $ref: '#/definitions/CommonSuccess'
+        "500":
+          description: CommonError
+          schema:
+            $ref: '#/definitions/CommonError'
+      security:
+      - apiKey:
+        - '[]'
+      tags:
+      - Customer
+  /customers/{id}/accounts:
+    get:
+      description: Get accounts list
+      operationId: listAccount
+      parameters:
+      - description: 'name: id'
+        in: path
+        name: id
+        required: true
+        type: integer
+        x-go-name: Id
+      responses:
+        "200":
+          description: GetAccounts
+          schema:
+            $ref: '#/definitions/GetAccounts'
+        "500":
+          description: CommonError
+          schema:
+            $ref: '#/definitions/CommonError'
+      security:
+      - apiKey:
+        - '[]'
+      tags:
+      - Account
+    post:
+      description: Create a new account
+      operationId: addAccount
+      parameters:
+      - description: 'name: id'
+        in: path
+        name: id
+        required: true
+        type: integer
+        x-go-name: Id
+      - description: 'name: body'
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/ReqAddAccount'
+        x-go-name: Body
+      responses:
+        "200":
+          description: GetAccount
+          schema:
+            $ref: '#/definitions/GetAccount'
+        "500":
+          description: CommonError
+          schema:
+            $ref: '#/definitions/CommonError'
+      security:
+      - apiKey:
+        - '[]'
+      tags:
+      - Account
+  /customers/{id}/accounts/{accountId}:
+    delete:
+      description: Delete account
+      operationId: deleteAccount
+      parameters:
+      - description: 'name: id'
+        in: path
+        name: id
+        required: true
+        type: integer
+        x-go-name: Id
+      - description: 'name: accountId'
+        in: path
+        name: accountId
+        required: true
+        type: integer
+        x-go-name: AccountId
+      responses:
+        "200":
+          description: CommonSuccess
+          schema:
+            $ref: '#/definitions/CommonSuccess'
+        "500":
+          description: CommonError
+          schema:
+            $ref: '#/definitions/CommonError'
+      security:
+      - apiKey:
+        - '[]'
+      tags:
+      - Account
+  /customers/{id}/accounts/{accountId}/balance:
+    get:
+      description: Get balance
+      operationId: getBalance
+      parameters:
+      - description: 'name: id'
+        in: path
+        name: id
+        required: true
+        type: integer
+        x-go-name: Id
+      - description: 'name: accountId'
+        in: path
+        name: accountId
+        required: true
+        type: integer
+        x-go-name: AccountId
+      responses:
+        "200":
+          description: CommonSuccess
+          schema:
+            $ref: '#/definitions/CommonSuccess'
+        "500":
+          description: CommonError
+          schema:
+            $ref: '#/definitions/CommonError'
+      security:
+      - apiKey:
+        - '[]'
+      tags:
+      - Balance
+    put:
+      description: Update balance
+      operationId: updateBalance
+      parameters:
+      - description: 'name: id'
+        in: path
+        name: id
+        required: true
+        type: integer
+        x-go-name: Id
+      - description: 'name: accountId'
+        in: path
+        name: accountId
+        required: true
+        type: integer
+        x-go-name: AccountId
+      - description: 'name: body'
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/ReqUpdateBalance'
+        x-go-name: Body
+      responses:
+        "200":
+          description: CommonSuccess
+          schema:
+            $ref: '#/definitions/CommonSuccess'
+        "500":
+          description: CommonError
+          schema:
+            $ref: '#/definitions/CommonError'
+      security:
+      - apiKey:
+        - '[]'
+      tags:
+      - Balance
+  /customers/{id}/accounts/{accountId}/transactions:
+    get:
+      description: Get transactions
+      operationId: getTransactiıns
+      parameters:
+      - description: 'name: id'
+        in: path
+        name: id
+        required: true
+        type: integer
+        x-go-name: Id
+      - description: 'name: accountId'
+        in: path
+        name: accountId
+        required: true
+        type: integer
+        x-go-name: AccountId
+      responses:
+        "200":
+          description: CommonSuccess
+          schema:
+            $ref: '#/definitions/CommonSuccess'
+        "500":
+          description: CommonError
+          schema:
+            $ref: '#/definitions/CommonError'
+      security:
+      - apiKey:
+        - '[]'
+      tags:
+      - Transaction
+    post:
+      description: Make transaction
+      operationId: makeTransactiın
+      parameters:
+      - description: 'name: id'
+        in: path
+        name: id
+        required: true
+        type: integer
+        x-go-name: Id
+      - description: 'name: accountId'
+        in: path
+        name: accountId
+        required: true
+        type: integer
+        x-go-name: AccountId
+      - description: 'name: body'
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/ReqAddTransaction'
+        x-go-name: Body
+      responses:
+        "200":
+          description: CommonSuccess
+          schema:
+            $ref: '#/definitions/CommonSuccess'
+        "500":
+          description: CommonError
+          schema:
+            $ref: '#/definitions/CommonError'
+      security:
+      - apiKey:
+        - '[]'
+      tags:
+      - Transaction
+  /customers/{id}/accounts/{accountId}/payments:
+    get:
+      description: Get payments
+      operationId: getPayments
+      parameters:
+      - description: 'name: id'
+        in: path
+        name: id
+        required: true
+        type: integer
+        x-go-name: Id
+      - description: 'name: accountId'
+        in: path
+        name: accountId
+        required: true
+        type: integer
+        x-go-name: AccountId
+      responses:
+        "200":
+          description: CommonSuccess
+          schema:
+            $ref: '#/definitions/CommonSuccess'
+        "500":
+          description: CommonError
+          schema:
+            $ref: '#/definitions/CommonError'
+      security:
+      - apiKey:
+        - '[]'
+      tags:
+      - Payment
+    post:
+      description: Add payment
+      operationId: addPayment
+      parameters:
+      - description: 'name: id'
+        in: path
+        name: id
+        required: true
+        type: integer
+        x-go-name: Id
+      - description: 'name: accountId'
+        in: path
+        name: accountId
+        required: true
+        type: integer
+        x-go-name: AccountId
+      - description: 'name: body'
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/ReqAddPayment'
+        x-go-name: Body 
+      responses:
+        "200":
+          description: CommonSuccess
+          schema:
+            $ref: '#/definitions/CommonSuccess'
+        "500":
+          description: CommonError
+          schema:
+            $ref: '#/definitions/CommonError'
+      security:
+      - apiKey:
+        - '[]'
+      tags:
+      - Payment
+produces:
+- application/json
+schemes:
+- http
+- https
+securityDefinitions:
+  apiKey:
+    in: header
+    name: authorization
+    type: apiKey
+swagger: "2.0"
