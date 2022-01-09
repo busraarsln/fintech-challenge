@@ -74,7 +74,11 @@ server.go
 
 ### SWAGGER UI:
 
+(AWS) http://3.71.71.104:8000/docs#/
+
 https://localhost:8000/docs
+
+
 
 
 ## Todo
