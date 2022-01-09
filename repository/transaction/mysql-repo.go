@@ -68,7 +68,10 @@ func (m *mysqlRepo) GetTransactions(accountId int) (*models.TransactionList, err
 			&n.From,
 			&n.To,
 			&n.AccountID,
-			&n.AmountID); err != nil {
+			&n.AmountID,
+			&n.Amount.ID,
+			&n.Amount.Currency,
+			&n.Amount.Value); err != nil {
 			return nil, errors.New(fmt.Sprintln("Failed to fetch transactions", err.Error()))
 		}
 		transactionList = append(transactionList, &n)

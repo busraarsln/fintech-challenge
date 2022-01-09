@@ -28,8 +28,9 @@ func (*controller) GetCustomers(w http.ResponseWriter, r *http.Request) {
 	customers, err := customerService.GetCustomers()
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
-		json.NewEncoder(w).Encode(errors.ServiceError{Message: "Error getting the customers"})
-	}
+		json.NewEncoder(w).Encode(errors.ServiceError{Message: "Error getting the transactions"})
+		return
+	} 
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(customers)
 }

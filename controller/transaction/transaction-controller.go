@@ -31,7 +31,8 @@ func (*controller) GetTransacitons(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		json.NewEncoder(w).Encode(errors.ServiceError{Message: "Error getting the transactions"})
-	}
+		return
+	} 
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(transactions)
 }

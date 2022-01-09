@@ -30,8 +30,9 @@ func (*controller) GetBalance(w http.ResponseWriter, r *http.Request) {
 	balance, err := balanceService.GetBalance(accountId)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
-		json.NewEncoder(w).Encode(errors.ServiceError{Message: err.Error()})
-	}
+		json.NewEncoder(w).Encode(errors.ServiceError{Message: "Error getting the transactions"})
+		return
+	} 
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(balance)
 }
@@ -57,6 +58,7 @@ func (*controller) UpdateBalance(w http.ResponseWriter, r *http.Request) {
 	if err2 != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		json.NewEncoder(w).Encode(errors.ServiceError{Message: err2.Error()})
+		return
 	}
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(balance)

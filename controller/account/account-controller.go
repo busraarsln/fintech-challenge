@@ -31,8 +31,9 @@ func (*controller) GetAccounts(w http.ResponseWriter, r *http.Request) {
 	accounts, err := accountService.GetAccounts(customerId)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
-		json.NewEncoder(w).Encode(errors.ServiceError{Message: err.Error()})
-	}
+		json.NewEncoder(w).Encode(errors.ServiceError{Message: "Error getting the transactions"})
+		return
+	} 
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(accounts)
 }
@@ -73,6 +74,7 @@ func (*controller) DeleteAccount(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		json.NewEncoder(w).Encode(errors.ServiceError{Message: "Error deleting the account"})
+		return
 	}
 	w.WriteHeader(http.StatusOK)
 }

@@ -30,8 +30,9 @@ func (*controller) GetPayments(w http.ResponseWriter, r *http.Request) {
 	payments, err := paymentService.GetPayments(accountId)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
-		json.NewEncoder(w).Encode(errors.ServiceError{Message: "Error getting the payments"})
-	}
+		json.NewEncoder(w).Encode(errors.ServiceError{Message: "Error getting the transactions"})
+		return
+	} 
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(payments)
 }
