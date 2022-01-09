@@ -6,7 +6,7 @@ const (
 
 	getCustomer = `Select * from customer where id=?`
 
-	getCustomers = `Select * from customer where is_active = 0`
+	getCustomers = `Select * from customer where is_active = 1`
 
 	deleteCustomer = `Update customer set is_active = 0 where id = ?`
 )

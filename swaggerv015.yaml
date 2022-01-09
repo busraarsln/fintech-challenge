@@ -361,30 +361,7 @@ definitions:
         $ref: '#/definitions/Amount'
     type: object
     x-go-package: goswagger/models
-  ReqAddPayment:
-    properties:
-      booked:
-        description: |-
-          booked of the payment
-          in: string
-        type: string
-        x-go-name: Booked
-        from:
-          description: |-
-            From of the payment
-            in: string
-          type: string
-          x-go-name: PaymentFrom
-        to:
-          description: |-
-            To of the payment
-            in: string
-        type: string
-        x-go-name: PaymentTo
-      amount:
-        $ref: '#/definitions/Amount'
-    type: object
-    x-go-package: goswagger/models
+
 host: localhost:8000
 info:
   title: 'Fintech Api:'
@@ -698,43 +675,6 @@ paths:
         required: true
         type: integer
         x-go-name: AccountId
-      responses:
-        "200":
-          description: CommonSuccess
-          schema:
-            $ref: '#/definitions/CommonSuccess'
-        "500":
-          description: CommonError
-          schema:
-            $ref: '#/definitions/CommonError'
-      security:
-      - apiKey:
-        - '[]'
-      tags:
-      - Payment
-    post:
-      description: Add payment
-      operationId: addPayment
-      parameters:
-      - description: 'name: id'
-        in: path
-        name: id
-        required: true
-        type: integer
-        x-go-name: Id
-      - description: 'name: accountId'
-        in: path
-        name: accountId
-        required: true
-        type: integer
-        x-go-name: AccountId
-      - description: 'name: body'
-        in: body
-        name: body
-        required: true
-        schema:
-          $ref: '#/definitions/ReqAddPayment'
-        x-go-name: Body 
       responses:
         "200":
           description: CommonSuccess

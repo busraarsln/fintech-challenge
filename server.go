@@ -53,17 +53,17 @@ func main() {
 
 	const port string = ":8000"
 
-	httpRouter.Handle("/swaggerv013.yaml", http.FileServer(http.Dir("./")))
+	httpRouter.Handle("/swaggerv015.yaml", http.FileServer(http.Dir("./")))
 
 	// documentation for developers
-	opts := middleware.SwaggerUIOpts{SpecURL: "/swaggerv013.yaml"}
+	opts := middleware.SwaggerUIOpts{SpecURL: "/swaggerv015.yaml"}
 	sh := middleware.SwaggerUI(opts, nil)
 	httpRouter.Handle("/docs", sh)
 
 	httpRouter.GET("/", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintln(w, "Up and running...")
 	})
-	
+
 	httpRouter.GET("/customers", customerController.GetCustomers)
 	httpRouter.POST("/customers", customerController.AddCustomer)
 	httpRouter.DELETE("/customers/{id:[0-9]+}", customerController.DeleteCustomer)
